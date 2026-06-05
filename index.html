@@ -595,71 +595,15 @@
       +'<div class="campo"><label>Edad</label><select id="f_edad"><option value="">Seleccionar&hellip;</option><option>13-17</option><option>18-25</option><option>26-35</option><option>36-50</option><option>50+</option></select></div>'
       +'<div class="campo"><label>&iquest;Por qu&eacute; quer&eacute;s estudiar esto?</label><textarea id="f_motivacion" rows="2" placeholder="Opcional"></textarea></div></div>';
   }
- function campo(id,label){
-  return '<div><label>'+label+'</label><input id="'+id+'"></div>';
-}
-
-async function enviarCompromiso() {
-  const g = id => (document.getElementById(id)?.value || '').trim();
-
-  const fila = {
-    estudio_id: actual.id,
-    nombre: g('f_nombre'),
-    apellido: g('f_apellido'),
-    ciudad: g('f_ciudad'),
-    comunidad: g('f_comunidad'),
-    email: g('f_email'),
-    telefono: g('f_telefono'),
-    edad: g('f_edad'),
-    motivacion: g('f_motivacion')
-  };
-
-  if (!fila.nombre || !fila.apellido || !fila.ciudad || !fila.email) {
-    alert('Completá nombre, apellido, ciudad y email.');
-    return;
+  function campo(id,label){ return '<div><label>'+label+'</label><input id="'+id+'"></div>'; }
+  async function enviarCompromiso() {
+    const g = id => (document.getElementById(id)?.value||'').trim();
+    const fila = { estudio_id:actual.id, nombre:g('f_nombre'), apellido:g('f_apellido'), ciudad:g('f_ciudad'), comunidad:g('f_comunidad'), email:g('f_email'), telefono:g('f_telefono'), edad:g('f_edad'), motivacion:g('f_motivacion') };
+    if (!fila.nombre||!fila.apellido||!fila.ciudad||!fila.email) { alert('Complet\u00e1 nombre, apellido, ciudad y email.'); return; }
+    const { error } = await supabaseClient.from('compromisos').insert(fila);
+    if (error) { alert('Hubo un error al guardar.'); console.error(error); return; }
+    document.getElementById('modal').innerHTML='<div class="exito"><div class="ic"><svg style="width:54px;height:54px;color:var(--gold)"><use href="#torah"/></svg></div><h3>\u00a1Gracias por sumarte!</h3><p><b>'+fila.nombre+' '+fila.apellido+'</b>, tu compromiso qued\u00f3 registrado. Cuando termines, volv\u00e9 y marcalo como completado.</p><button class="btn-estudiar" style="max-width:240px;margin:0 auto" onclick="cerrarYRecargar()">Volver</button></div>';
   }
-
-  const { error } = await supabaseClient
-    .from('compromisos')
-    .insert(fila);
-
-  if (error) {
-    alert('Hubo un error al guardar.');
-    console.error(error);
-    return;
-  }
-
-  // Enviar email de bienvenida
-  try {
-    await fetch('/.netlify/functions/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        nombre: fila.nombre,
-        email: fila.email,
-        estudio: actual.titulo
-      })
-    });
-  } catch (emailError) {
-    console.error('Error enviando email:', emailError);
-  }
-
-  document.getElementById('modal').innerHTML =
-    '<div class="exito">' +
-      '<div class="ic">' +
-        '<svg style="width:54px;height:54px;color:var(--gold)">' +
-          '<use href="#torah"/>' +
-        '</svg>' +
-      '</div>' +
-      '<h3>¡Gracias por sumarte!</h3>' +
-      '<p><b>' + fila.nombre + ' ' + fila.apellido + '</b>, tu compromiso quedó registrado. También te enviamos un email de bienvenida con los detalles del estudio.</p>' +
-      '<button class="btn-estudiar" style="max-width:240px;margin:0 auto" onclick="cerrarYRecargar()">' +
-        'Volver' +
-      '</button>' +
-    '</div>';
-}
 
   let comentAbierto=false;
   async function toggleComentarios(eid) {
