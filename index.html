@@ -3,33 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="/favicon.png">
-<title>Torá del Rebe | Estudiar, inspirar y crecer juntos</title>
-
-<meta name="description" content="Estudiar juntos. Inspirarnos juntos. Crecer juntos. Un espacio dedicado a las enseñanzas del Rebe de Lubavitch para llevar la sabiduría de la Torá a la vida cotidiana y fortalecer nuestra conexión con el judaísmo.">
-
-<meta name="keywords" content="Torá del Rebe, Rebe de Lubavitch, Jabad, Jasidut, Judaísmo, estudio de Torá, comunidad judía, Parashá, enseñanzas del Rebe, crecimiento espiritual">
-
-<meta name="author" content="Torá del Rebe">
-
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Torá del Rebe">
-<meta property="og:title" content="Torá del Rebe | Estudiar, inspirar y crecer juntos">
-<meta property="og:description" content="Sumate a una comunidad que estudia, comparte y vive las enseñanzas del Rebe de Lubavitch. Un lugar para aprender, inspirarse y crecer juntos a través de la Torá.">
-<meta property="og:url" content="https://toradelrebe.com/">
-
-<meta property="og:image" content="https://toradelrebe.com/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Torá del Rebe - Estudiar, inspirar y crecer juntos">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Torá del Rebe | Estudiar, inspirar y crecer juntos">
-<meta name="twitter:description" content="Una comunidad dedicada a estudiar y compartir las enseñanzas del Rebe de Lubavitch para inspirar la vida cotidiana con los valores de la Torá.">
-<meta name="twitter:image" content="https://toradelrebe.com/og-image.jpg">
-
-<link rel="canonical" href="https://toradelrebe.com/">
-  
+<title>Torá del Rebe — Nos unimos estudiando</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -84,6 +58,13 @@
   .scroll-hint { position:absolute; bottom:26px; left:50%; transform:translateX(-50%); z-index:5; color:var(--gold); font-size:24px; animation:bounce 2s infinite; }
   @keyframes bounce { 0%,100%{transform:translate(-50%,0);} 50%{transform:translate(-50%,12px);} }
   @keyframes fadeUp { from{opacity:0;transform:translateY(28px);} to{opacity:1;transform:translateY(0);} }
+  .cta-primary { animation:fadeUp 1s .6s forwards, latido 2.8s ease-in-out 2s infinite; }
+  .cta-chico { padding:14px 26px; font-size:15px; }
+  @keyframes latido { 0%,100%{ box-shadow:0 10px 32px rgba(184,135,15,.4); } 50%{ box-shadow:0 14px 44px rgba(184,135,15,.7), 0 0 0 8px rgba(247,218,126,.18); transform:scale(1.025); } }
+  .link-proyecto { color:var(--gold); font-family:'Oswald'; font-size:14px; letter-spacing:1px; text-transform:uppercase; font-weight:600; opacity:0; animation:fadeUp 1s .75s forwards; transition:opacity .2s; }
+  .link-proyecto:hover { opacity:.7; }
+  .ws-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; width:100%; background:#25d366; color:#fff; border:none; border-radius:30px; padding:14px; font-family:'Oswald'; font-weight:600; font-size:15px; letter-spacing:.5px; text-transform:uppercase; cursor:pointer; margin-top:12px; transition:transform .15s; }
+  .ws-btn:hover { transform:translateY(-2px); }
 
   /* CONTADOR */
   .contador-total { position:relative; z-index:6; margin:-70px auto 0; max-width:600px; background:var(--bg2); border:1px solid var(--line); border-radius:24px; padding:32px 44px; box-shadow:0 24px 64px rgba(80,60,15,.14); text-align:center; opacity:0; animation:fadeUp 1s .75s forwards; }
@@ -101,7 +82,8 @@
   .sobre { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
   .sobre p { font-size:16px; line-height:1.85; color:var(--muted); margin-bottom:16px; font-weight:300; }
   .sobre p strong { color:var(--ink); font-weight:600; }
-  .sobre-visual { aspect-ratio:16/9; border-radius:24px; background-image:linear-gradient(160deg,rgba(184,135,15,.12),rgba(20,15,8,.5)),url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1200&auto=format&fit=crop'); background-size:cover; background-position:center; box-shadow:0 24px 60px rgba(80,60,15,.18); position:relative; }  .sobre-visual .badge { position:absolute; bottom:24px; left:24px; right:24px; background:rgba(255,255,255,.95); backdrop-filter:blur(8px); border-radius:16px; padding:20px; }
+  .sobre-visual { aspect-ratio:4/5; border-radius:24px; background-image:linear-gradient(160deg,rgba(184,135,15,.12),rgba(20,15,8,.5)),url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1200&auto=format&fit=crop'); background-size:cover; background-position:center; box-shadow:0 24px 60px rgba(80,60,15,.18); position:relative; }
+  .sobre-visual .badge { position:absolute; bottom:24px; left:24px; right:24px; background:rgba(255,255,255,.95); backdrop-filter:blur(8px); border-radius:16px; padding:20px; }
   .sobre-visual .badge .q { font-family:'Oswald',sans-serif; font-size:18px; line-height:1.4; color:var(--ink); font-weight:500; }
   .sobre-visual .badge .a { font-size:12px; color:var(--gold); margin-top:8px; letter-spacing:.5px; text-transform:uppercase; font-weight:600; }
 
@@ -168,7 +150,7 @@
   .badge-prox { display:inline-block; background:#efe6d2; color:#9a7d2e; font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; font-weight:600; padding:4px 12px; border-radius:20px; margin-bottom:14px; }
   .estudio .tipo { font-family:'Oswald',sans-serif; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; font-weight:600; }
   .estudio h3 { font-size:23px; font-weight:500; line-height:1.2; margin-bottom:12px; padding-right:40px; text-transform:uppercase; letter-spacing:.3px; }
-  .estudio .resumen { font-size:14px; color:var(--muted); line-height:1.65; margin-bottom:18px; font-weight:300; flex:1; white-space: pre-line;}
+  .estudio .resumen { font-size:14px; color:var(--muted); line-height:1.65; margin-bottom:18px; font-weight:300; flex:1; }
   .estudio .tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:20px; }
   .etag { font-size:11px; background:var(--cream); color:#8a7434; border-radius:20px; padding:4px 11px; font-weight:500; }
   .estudio .anotados { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--muted); margin-bottom:18px; }
@@ -228,7 +210,7 @@
   .cerrar { background:transparent; border:1px solid var(--line); border-radius:10px; width:36px; height:36px; cursor:pointer; color:var(--muted); font-size:15px; flex-shrink:0; }
   .cerrar:hover { border-color:var(--gold); color:var(--gold); }
   .modal h3 { font-size:28px; font-weight:600; line-height:1.15; margin-bottom:16px; text-transform:uppercase; }
-  .modal .resumen-full { font-size:16px; line-height:1.75; color:#4c4435; margin-bottom:20px; white-space: pre-line;}
+  .modal .resumen-full { font-size:16px; line-height:1.75; color:#4c4435; margin-bottom:20px; }
   /* selector de nivel */
   .nivel-sel { display:flex; gap:10px; margin-bottom:20px; }
   .nivel-btn { flex:1; background:#fff; border:1.5px solid var(--line); border-radius:12px; padding:14px; cursor:pointer; font-family:'Oswald',sans-serif; font-weight:600; font-size:14px; letter-spacing:.5px; text-transform:uppercase; color:var(--muted); transition:all .2s; }
@@ -269,18 +251,7 @@
   footer .fwhats { font-size:14px; color:var(--muted); margin-bottom:14px; font-weight:400; }
   footer .fwhats a { color:var(--green); font-weight:500; }
   footer .fr { font-size:12px; color:var(--soft); margin-bottom:6px; }
-  footer .fded {
-  font-family:'Oswald',sans-serif;
-  font-size:28px;
-  color:var(--gold);
-  font-weight:600;
-  letter-spacing:1px;
-  margin-top:20px;
-  padding-top:20px;
-  border-top:1px solid var(--line);
-  display:block;
-  text-align:center;
-}
+  footer .fded { font-family:'Oswald',sans-serif; font-size:19px; font-weight:600; color:var(--gold); letter-spacing:.5px; margin-top:18px; padding-top:18px; border-top:1px solid var(--line); display:inline-block; text-transform:uppercase; }
   .loading { text-align:center; padding:60px; color:var(--muted); grid-column:1/-1; }
 
   @media (max-width:820px) {
@@ -331,12 +302,12 @@
   <div class="light-rays"></div>
   <div class="orb o1"></div><div class="orb o2"></div>
   <div class="hero-center">
-    <div class="kicker">Nos unimos estudiando &middot; Jabad Argentina</div>
+    <div class="kicker">Tom&aacute; un compromiso para estudiar</div>
     <h1><span class="l1">Las ense&ntilde;anzas del</span><span class="l2">Rebe de Lubavitch</span></h1>
     <p class="lede">Sum&aacute;te a cientos de personas estudiando lo mismo, al mismo tiempo. Tom&aacute; tu compromiso y viv&iacute; las ense&ntilde;anzas del Rebe junto a la comunidad.</p>
     <div class="hero-cta">
-      <button class="cta-primary" onclick="document.getElementById('estudios').scrollIntoView()">Ver los estudios</button>
-      <button class="cta-ghost" onclick="document.getElementById('sobre').scrollIntoView()">El proyecto</button>
+      <button class="cta-primary" onclick="abrirCompromisoActivo()">Quiero comprometerme a estudiar</button>
+      <button class="cta-ghost cta-chico" onclick="document.getElementById('sobre').scrollIntoView()">El proyecto</button>
     </div>
   </div>
   <div class="scroll-hint">&#8595;</div>
@@ -441,16 +412,6 @@
   <p>Si te comprometiste y completaste el estudio, marcalo para que se sume al contador de la comunidad.</p>
   <button class="btn-estudiar" style="max-width:320px;margin:0 auto" id="btnAbrirCompletar">Marqu&eacute; un estudio como completado</button>
 </div>
-<!--  
-<div class="donar" id="donar" data-aos="fade-up">
-  <div class="donar-box">
-    <div class="ic">&#10084;&#65039;</div>
-    <h2>Apoy&aacute; el proyecto</h2>
-    <p>Tu aporte hace posible que m&aacute;s personas accedan a las ense&ntilde;anzas del Rebe en espa&ntilde;ol. Sum&aacute;te como sost&eacute;n de este estudio comunitario.</p>
-    <button class="donar-btn" onclick="window.open('https://link.mercadopago.com.ar/ellazojuventud','_blank')">Quiero donar</button>
-  </div>
-</div>
-  -->
 
 <div class="overlay" id="overlay"><div class="modal" id="modal"></div></div>
 
@@ -458,7 +419,6 @@
   <div class="fmark"><svg style="color:var(--gold)"><use href="#torah"/></svg></div>
   <div class="fl">Tor&aacute; del Rebe</div>
   <div class="fmail"><a href="mailto:toradelrebe@gmail.com">toradelrebe@gmail.com</a></div>
-  <div class="fwhats">WhatsApp: <a href="https://wa.me/541128605718" target="_blank">11 2860 5718</a></div>
   <div class="fr">Una iniciativa de Jabad Argentina</div>
   <div class="fded">Leiluy Nishmat de Sara Bat Abe Z&quot;L</div>
 </footer>
@@ -546,7 +506,7 @@
       } else {
         botones = '<div class="botonera">'
           +'<button class="btn-leer" data-leer="'+s.id+'">Leer el estudio</button>'
-          +'<button class="btn-estudiar" data-comp="'+s.id+'">Comprometerme a estudiarlo</button>'
+          +'<button class="btn-estudiar" data-comp="'+s.id+'">Comprometerme</button>'
           +'</div>';
       }
       return '<div class="estudio'+(prox?' prox':'')+'">'
@@ -622,13 +582,66 @@
       +'<div class="campo"><label>&iquest;Por qu&eacute; quer&eacute;s estudiar esto?</label><textarea id="f_motivacion" rows="2" placeholder="Opcional"></textarea></div></div>';
   }
   function campo(id,label){ return '<div><label>'+label+'</label><input id="'+id+'"></div>'; }
+  function abrirCompromisoActivo() {
+    const disp = estudios.filter(s=>(s.estado_pub||'disponible')!=='proximamente');
+    if (!disp.length) { document.getElementById('estudios').scrollIntoView(); return; }
+    abrirCompromiso(disp[0].id);
+  }
+  function nombreNivel(n){ return n==='avanz' ? 'Avanzado' : 'Principiante'; }
+  function matsDeNivel(s, suf) {
+    let mats = s['materiales_'+suf];
+    if (typeof mats === 'string') { try { mats = JSON.parse(mats); } catch(e){ mats=[]; } }
+    if (!Array.isArray(mats)) mats = [];
+    if (!mats.length) {
+      mats = [
+        { url:s['pdf_'+suf]||s.pdf_url, icono:'\ud83d\udcc4', nombre:'PDF' },
+        { url:s['video_'+suf]||s.video_url, icono:'\u25b6\ufe0f', nombre:'Video' },
+        { url:s['audio_'+suf]||s.audio_url, icono:'\ud83c\udfa7', nombre:'Audio' },
+        { url:s['resumen_ext_'+suf]||s.resumen_extendido_url, icono:'\ud83d\udcd1', nombre:'Resumen' }
+      ].filter(m=>m.url);
+    }
+    return mats;
+  }
+  function compartirWhatsApp() {
+    const s = actual, suf = nivelActual;
+    const mats = matsDeNivel(s, suf);
+    const links = mats.map(m=>'\u2022 '+m.nombre+': '+m.url).join('\n');
+    const msg = '\u00a1Mazal Tov! \ud83c\udf89 Me comprometi a estudiar "'+s.titulo+'" (nivel '+nombreNivel(suf)+') en Tor\u00e1 del Rebe.\n\n'
+      + (links ? 'Materiales para estudiar:\n'+links+'\n\n' : '')
+      + 'Sumate vos tambi\u00e9n: https://toradelrebe.com';
+    window.open('https://wa.me/?text='+encodeURIComponent(msg), '_blank');
+  }
   async function enviarCompromiso() {
     const g = id => (document.getElementById(id)?.value||'').trim();
     const fila = { estudio_id:actual.id, nombre:g('f_nombre'), apellido:g('f_apellido'), ciudad:g('f_ciudad'), comunidad:g('f_comunidad'), email:g('f_email'), telefono:g('f_telefono'), edad:g('f_edad'), motivacion:g('f_motivacion') };
     if (!fila.nombre||!fila.apellido||!fila.ciudad||!fila.email) { alert('Complet\u00e1 nombre, apellido, ciudad y email.'); return; }
     const { error } = await supabaseClient.from('compromisos').insert(fila);
     if (error) { alert('Hubo un error al guardar.'); console.error(error); return; }
-    document.getElementById('modal').innerHTML='<div class="exito"><div class="ic"><svg style="width:54px;height:54px;color:var(--gold)"><use href="#torah"/></svg></div><h3>\u00a1Gracias por sumarte!</h3><p><b>'+fila.nombre+' '+fila.apellido+'</b>, tu compromiso qued\u00f3 registrado. Cuando termines, volv\u00e9 y marcalo como completado.</p><button class="btn-estudiar" style="max-width:240px;margin:0 auto" onclick="cerrarYRecargar()">Volver</button></div>';
+    nivelActual = 'princ';
+    document.getElementById('modal').innerHTML =
+      '<div class="exito"><div class="ic"><svg style="width:54px;height:54px;color:var(--gold)"><use href="#torah"/></svg></div>'
+      +'<h3>\u00a1Mazal Tov, '+fila.nombre+'!</h3>'
+      +'<p>Tu compromiso qued\u00f3 registrado. Ahora eleg\u00ed tu nivel y empez\u00e1 a estudiar:</p></div>'
+      +'<div class="nivel-sel">'
+        +'<button class="nivel-btn activo" id="nb_princ" onclick="setNivelExito(\'princ\')">Principiante<small>Para empezar</small></button>'
+        +'<button class="nivel-btn" id="nb_avanz" onclick="setNivelExito(\'avanz\')">Avanzado<small>M\u00e1s profundo</small></button>'
+      +'</div>'
+      +'<div class="recursos" id="matsExito"></div>'
+      +'<button class="ws-btn" onclick="compartirWhatsApp()">&#128172; Enviarme el estudio por WhatsApp</button>'
+      +'<button class="btn-estudiar" style="margin-top:12px" onclick="cerrarYRecargar()">Listo</button>';
+    pintarMatsExito();
+  }
+  function setNivelExito(n) {
+    nivelActual = n;
+    document.getElementById('nb_princ').classList.toggle('activo', n==='princ');
+    document.getElementById('nb_avanz').classList.toggle('activo', n==='avanz');
+    pintarMatsExito();
+  }
+  function pintarMatsExito() {
+    const mats = matsDeNivel(actual, nivelActual);
+    document.getElementById('matsExito').innerHTML = mats.length
+      ? mats.map(m=>'<a class="rec on" href="'+m.url+'" target="_blank"><span class="ic">'+(m.icono||'\ud83d\udcc4')+'</span> '+m.nombre+'</a>').join('')
+      : '<div style="grid-column:1/-1;color:var(--soft);font-style:italic;font-size:14px;text-align:center;padding:8px">A\u00fan no hay materiales para este nivel.</div>';
   }
 
   let comentAbierto=false;
