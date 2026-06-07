@@ -7,11 +7,11 @@ exports.handler = async (event) => {
     const { nombre, email, estudio } = JSON.parse(event.body);
 
     const resultado = await resend.emails.send({
-      from: 'Torá del Rebe <onboarding@resend.dev>',
+      from: 'Torá del Rebe <from: "noreply@toradelrebe.com>",>
       to: email,
       subject: '¡Gracias por sumarte al estudio de Torá del Rebe!',
       html: `
-        <h2>¡Shalom ${nombre}!</h2>
+        <h2>¡Hola ${nombre}!</h2>
 
         <p>Gracias por sumarte al estudio comunitario de Torá del Rebe.</p>
 
